@@ -1,0 +1,3277 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+
+ 
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document Process</title>
+
+ 
+
+ 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+   
+
+    <link rel="stylesheet" href="./style.css">
+
+ 
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+ 
+
+    <style>
+
+     
+
+ 
+
+        .menu-toggle {
+
+            width: 44px;
+
+            height: 44px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #202b68;
+
+            border: none;
+
+            color: #fff;
+
+        }
+
+ 
+
+        .menu-toggle:hover,
+
+        .menu-toggle:focus {
+
+            background: #141cab;
+
+            color: #fff;
+
+        }
+
+ 
+
+        .page-layout {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 18px;
+
+            padding: 18px;
+
+            width: 100%;
+
+        }
+
+ 
+
+        .category-sidebar {
+
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 0 0 350px;
+
+            width: 350px;
+
+            min-width: 0;
+
+            min-height: calc(100vh - 36px);
+
+            height: auto;
+
+            padding: 18px 14px;
+
+            background: #D6E6F5;
+
+            border-radius: 16px;
+
+            position: relative;
+
+            top: auto;
+
+            left: auto;
+
+            z-index: 1;
+
+            overflow-y: auto;
+
+            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15);
+
+        }
+
+ 
+
+        /* Show categories as a flex column when opened */
+
+        .category-sidebar.collapse.show {
+
+            display: flex;
+
+        }
+
+ 
+
+        .category-heading {
+
+            color: #202b68;
+
+            padding: 8px 10px 18px;
+
+        }
+
+ 
+
+        .category-heading h5 {
+
+            margin: 0;
+
+            font-weight: 700;
+
+        }
+
+ 
+
+        .category-sidebar .accordion-item {
+
+            margin-bottom: 10px;
+
+            overflow: hidden;
+
+            border: 0;
+
+            border-radius: 9px;
+
+        }
+
+ 
+
+        .category-sidebar .accordion-button::after {
+
+            display: none;
+
+        }
+
+ 
+
+        .category-sidebar .accordion-button:not(.collapsed) {
+
+            color: #202b68;
+
+            background: #ffffff;
+
+        }
+
+ 
+
+        .category-sidebar .accordion-body {
+
+            background: #ffffff;
+
+        }
+
+ 
+
+        .category-links {
+
+            margin: 0;
+
+            padding-left: 20px;
+
+            color: #404b68;
+
+            line-height: 2.2;
+
+        }
+
+ 
+
+        .slide-content {
+
+            flex: 1 1 0;
+
+            min-width: 0;
+
+            width: 100%;
+
+        }
+
+ 
+
+        #carouselExampleContent {
+
+            max-width: 100%;
+
+            margin: 0 auto;
+
+        }
+
+ 
+
+        .carousel-inner {
+
+            overflow: hidden;
+
+        }
+
+ 
+
+        .carousel-item>div {
+
+            max-width: 100%;
+
+        }
+
+ 
+
+       
+
+        .slide-nav-btn {
+
+            background-color: #202b68;
+
+            color: #ffffff;
+
+            border: none;
+
+            padding: 10px 24px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            transition: all 0.2s ease-in-out;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+ 
+
+        .slide-nav-btn:hover {
+
+            background-color: #141cab;
+
+            color: #ffffff;
+
+        }
+
+ 
+
+        @media (max-width: 767.98px) {
+
+            .page-layout {
+
+                display: block;
+
+                padding: 10px;
+
+            }
+
+ 
+
+            .category-sidebar {
+
+                width: 100%;
+
+                min-height: auto;
+
+                margin-bottom: 15px;
+
+            }
+
+ 
+
+           
+
+        }
+
+    </style>
+
+</head>
+
+ 
+
+<body>
+
+ 
+
+    <div class="page-layout" id="pageLayout">
+
+ 
+
+        <!-- CATEGORIES SIDEBAR -->
+
+        <aside class="category-sidebar collapse" id="categorySidebar">
+
+            <div class="logo-section">
+
+                <img src="./TCP LOGO 8.png" alt="TCP Logo" class="logo">
+
+            </div>
+
+           
+
+            <div class="logo-divider"></div>
+
+ 
+
+            <div class="category-heading">
+
+                <h5>PHOTOSHOP :</h5>
+
+            </div>
+
+ 
+
+            <div class="accordion" id="categoryAccordion">
+
+ 
+
+                <!-- UI/UX DESIGN -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header d-flex align-items-center">
+
+                                                <a href="index.html" class="accordion-button collapsed text-decoration-none">
+
+                                                                                <span class="category-icon"><i class="fa-solid fa-pen-ruler"></i></span>
+
+ 
+
+ <span class="category-title ms-2 text-nowrap">Expo Designs</span>
+
+                        </a>
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uiuxMenu">
+
+                           
+
+                            <i class="fa-solid fa-caret-down dropdown-icon ms-auto"></i>
+
+                        </button>
+
+                    </h2>
+
+ 
+
+                    <div id="uiuxMenu" class="accordion-collapse collapse" data-bs-parent="#categoryAccordion">
+
+                        <div class="accordion-body">
+
+                            <ul class="category-links">
+
+                                <li>PROCESS DOCUMENTATION</li>
+
+                                <li>PROCESS OVERVIEW</li>
+
+                                <li><strong>STEP 01 -</strong> Expo Shortlisting & Team Update</li>
+
+                                <li><strong>STEP 02 - </strong>Mockup Landing Page Creation</li>
+
+                                <li><strong>STEP 03 - </strong>Website Analysis & Landing Page Structure</li>
+
+                                <li><strong>STEP 04 - </strong>Figma Design Process</li>
+
+                                <li><strong>STEP 04 - </strong>FIGMA DESIGN PROCESS: Empathize & Define</li>
+
+                                <li><strong>STEP 04 - </strong>FIGMA DESIGN PROCESS: Ideate & Design</li>
+
+                                <li><strong>STEP 04 - </strong>FIGMA DESIGN PROCESS: Prototype & Test</li>
+
+                                <li><strong>STEP 04 - </strong>FIGMA DESIGN PROCESS: Quality Check & Development Handoff</li>
+
+                                <li><strong>PROCESS SUMMARY - </strong>Expo to Development, End to End</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+ 
+
+                <!-- PHOTOSHOP -->
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header d-flex align-items-center">
+
+                        <a href="photoshop.html" class="accordion-button collapsed text-decoration-none">
+
+                                                        <span class="category-icon"><i class="fa-solid fa-image"></i></span>
+
+                                                                                    <span class="category-title ms-2">PHOTOSHOP</span>
+
+                        </a>
+
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#photoshopMenu">
+
+                            <i class="fa-solid fa-caret-down dropdown-icon ms-auto"></i>
+
+                        </button>
+
+                    </h2>
+
+ 
+
+                    <div id="photoshopMenu" class="accordion-collapse collapse" data-bs-parent="#categoryAccordion">
+
+                        <div class="accordion-body">
+
+                            <ul class="category-links">
+
+                                <li>Image Editing</li>
+
+                                <li>Poster Design</li>
+
+                                <li>Background Removal</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+ 
+
+            </div>
+
+ 
+
+            <div class="sidebar-note mt-auto pt-3">
+
+                <i class="fa-solid fa-book-open me-2"></i>
+
+                <div>
+
+                    TCP Process Documentation<br>
+
+                    Select a topic to open its slide.
+
+                </div>
+
+            </div>
+
+        </aside>
+
+ 
+
+        <div class="slide-content" id="slideContent">
+
+           
+
+            <!-- NAVBAR  -->
+
+            <nav class="navbar navbar-light bg-white shadow-sm px-3 mb-4 rounded-4">
+
+                <div class="container-fluid d-flex align-items-center">
+
+                    <div class="vr mx-3 align-self-center" style="height: 45px; width: 2px; opacity: 0.5; background-color: #202b68;"></div>
+
+ 
+
+                    <div class="d-flex flex-column justify-content-center">
+
+                        <p class="mb-0 fw-bold">Process documentation</p>
+
+                       
+
+                    </div>
+
+ 
+
+                    <button class="btn menu-toggle rounded-circle ms-auto" type="button" data-bs-toggle="collapse"
+
+                        data-bs-target="#categorySidebar" aria-controls="categorySidebar" aria-label="Toggle categories" aria-expanded="false">
+
+                        <i class="fa-solid fa-bars"></i>
+
+                    </button>
+
+                </div>
+
+            </nav>
+
+ 
+
+            <!-- CAROUSEL SLIDE -->
+
+            <div id="carouselExampleContent" class="carousel slide mx-auto" style="width: 100%;">
+
+               
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+
+                    <div class="slideheading">
+
+                        <h1>PHOTOSHOP</h1>
+
+                        <p>Graphic Design Internship Training Program
+
+</p>
+
+                    </div>
+
+                </div>
+
+ 
+
+                <div class="carousel-inner rounded-5">
+
+ 
+
+                    <!-- SLIDE 1 -->
+
+                   
+
+<div class="carousel-item active">
+
+    <div class="d-flex flex-column justify-content-center bg-subtle-success p-5 bg-1 rounded-5 position-relative overflow-hidden"
+
+        style="min-height: 600px; padding: 70px; background-color: #141a35;">
+
+ 
+
+        <i class="fa-solid fa-circle cover-circle circle-top"
+
+            style="position: absolute; color: #141cab; opacity: 1; z-index: 1; pointer-events: none; font-size: 290px; top: -50px; ">
+
+        </i>
+
+ 
+
+         <i class="fa-solid fa-circle cover-circle circle-top"
+
+            style="position: absolute; color: #ff5b61; opacity: 1; z-index: 1; pointer-events: none; font-size: 290px; top: 100px; right: 10px; ">
+
+        </i>
+
+ 
+
+        <div class="content position-relative"
+
+            style="margin-bottom: 30px; z-index: 2; max-width: 100%;">
+
+ 
+
+            <span class="section"
+
+                style="display: inline-block; background: #ff5b61; color: white; font-size: 16px; font-weight: 700; padding: 10px 24px;">
+
+                WEEK 01
+
+            </span>
+
+ 
+
+            <h1 class="mt-4"
+
+                style="color: white; font-size: clamp(32px, 4vw, 55px); line-height: 1.2; font-weight: 700;">
+
+                Design Fundamentals
+
+                <br>
+
+                & Photoshop Foundations
+
+            </h1>
+
+ 
+
+            <p class="fg-emphasis-secondary mb-4 mt-3 subtitle"
+
+                style="color: white; font-size: 20px; line-height: 1.5;">
+
+                Graphic Design Internship Training Program
+
+            </p>
+
+ 
+
+            <div class="line mb-4"></div>
+
+ 
+
+            <div class="tag d-flex flex-wrap align-items-center gap-2"
+
+                style="max-width: 100%;">
+
+ 
+
+                <span style="color: #d2ddf7;">Introduction to Graphic Design</span>
+
+ 
+
+                <span class="dot" style="color: #f2a900; font-size: 20px;">•</span>
+
+ 
+
+                <span style="color: #d2ddf7;">Design Principles</span>
+
+ 
+
+                <span class="dot" style="color: #f2a900; font-size: 20px;">•</span>
+
+ 
+
+                <span style="color: #d2ddf7;">Color Theory</span>
+
+ 
+
+                <span class="dot" style="color: #f2a900; font-size: 20px;">•</span>
+
+ 
+
+                <span style="color: #d2ddf7;">Typography</span>
+
+ 
+
+                <span class="dot" style="color: #f2a900; font-size: 20px;">•</span>
+
+ 
+
+                <span style="color: #d2ddf7;">Capstone Project</span>
+
+ 
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+ 
+
+ 
+
+                    <!-- SLIDE 2 -->
+
+                   
+
+ 
+
+<div class="carousel-item">
+
+ 
+
+    <div class="d-flex flex-column justify-content-center bg-2 rounded-5"
+
+        style="height:600px; min-height:600px; padding:25px 35px; background-color:#ffffff;">
+
+ 
+
+        <div class="overview mb-2">
+
+ 
+
+            <span class="section"
+
+                style="color:#ff5b61; font-size:16px; font-weight:700; border-left:6px solid #ff5b61; padding-left:12px;">
+
+                AGENDA
+
+            </span>
+
+ 
+
+            <h2 style="color:#202b68; font-family:Poppins,serif; font-size:32px; font-weight:bold; margin-top:8px; margin-bottom:0;">
+
+                Week 1 at a Glance
+
+            </h2>
+
+ 
+
+        </div>
+
+ 
+
+        <div class="container-fluid px-0 my-2">
+
+ 
+
+            <div class="row g-2">
+
+ 
+
+                <!-- LEFT SIDE -->
+
+                <div class="col-md-6">
+
+ 
+
+                    <!-- 01 -->
+
+                    <div class="d-flex align-items-center rounded-4 mb-2 overflow-hidden"
+
+                        style="min-height:85px; border:1px solid #141a35;">
+
+ 
+
+                        <div class="d-flex align-items-center justify-content-center"
+
+                            style="width:65px; min-height:85px; color:#141a35; font-size:25px; font-weight:700; flex-shrink:0;">
+
+                            01
+
+                        </div>
+
+ 
+
+                        <div class="p-2">
+
+                            <h5 style="color:#202b68; font-weight:700; font-size:16px; margin-bottom:5px;">
+
+                                Introduction to Graphic Design
+
+                            </h5>
+
+                            <p class="mb-0" style="color:#141a35; font-size:12px; line-height:1.5;">
+
+                                Core concepts, raster vs. vector, color modes, resolution, file formats
+
+                            </p>
+
+                        </div>
+
+ 
+
+                    </div>
+
+ 
+
+                    <!-- 02 -->
+
+                    <div class="d-flex align-items-center rounded-4 mb-2 overflow-hidden"
+
+                        style="min-height:85px; border:1px solid #ff5b61;">
+
+ 
+
+                        <div class="d-flex align-items-center justify-content-center"
+
+                            style="width:65px; min-height:85px; color:#ff5b61; font-size:25px; font-weight:700; flex-shrink:0;">
+
+                            02
+
+                        </div>
+
+ 
+
+                        <div class="p-2">
+
+                            <h5 style="color:#202b68; font-weight:700; font-size:16px; margin-bottom:5px;">
+
+                                Design Principles
+
+                            </h5>
+
+                            <p class="mb-0" style="color:#141a35; font-size:12px; line-height:1.5;">
+
+                                Alignment, balance, contrast, hierarchy, proximity, repetition, white space, scale, consistency
+
+                            </p>
+
+                        </div>
+
+ 
+
+                    </div>
+
+ 
+
+                </div>
+
+ 
+
+                <!-- RIGHT SIDE -->
+
+                <div class="col-md-6">
+
+ 
+
+                    <!-- 03 -->
+
+                    <div class="d-flex align-items-center rounded-4 mb-2 overflow-hidden"
+
+                        style="min-height:85px; border:1px solid #141a35;">
+
+ 
+
+                        <div class="d-flex align-items-center justify-content-center"
+
+                            style="width:65px; min-height:85px; color:#141a35; font-size:25px; font-weight:700; flex-shrink:0;">
+
+                            03
+
+                        </div>
+
+ 
+
+                        <div class="p-2">
+
+                            <h5 style="color:#202b68; font-weight:700; font-size:16px; margin-bottom:5px;">
+
+                                Color Theory
+
+                            </h5>
+
+                            <p class="mb-0" style="color:#141a35; font-size:12px; line-height:1.5;">
+
+                                Color wheel, harmonies, brand colors, and color psychology
+
+                            </p>
+
+                        </div>
+
+ 
+
+                    </div>
+
+ 
+
+                    <!-- 04 -->
+
+                    <div class="d-flex align-items-center rounded-4 mb-2 overflow-hidden"
+
+                        style="min-height:85px; border:1px solid #ff5b61;">
+
+ 
+
+                        <div class="d-flex align-items-center justify-content-center"
+
+                            style="width:65px; min-height:85px; color:#ff5b61; font-size:25px; font-weight:700; flex-shrink:0;">
+
+                            04
+
+                        </div>
+
+ 
+
+                        <div class="p-2">
+
+                            <h5 style="color:#202b68; font-weight:700; font-size:16px; margin-bottom:5px;">
+
+                                Typography
+
+                            </h5>
+
+                            <p class="mb-0" style="color:#141a35; font-size:12px; line-height:1.5;">
+
+                                Serif vs. sans-serif, pairing, weights, kerning, leading, tracking, hierarchy
+
+                            </p>
+
+                        </div>
+
+ 
+
+                    </div>
+
+ 
+
+                </div>
+
+ 
+
+                <!-- CENTER: 05 -->
+
+                <div class="col-md-6 mx-auto">
+
+ 
+
+                    <div class="d-flex align-items-center rounded-4 overflow-hidden"
+
+                        style="min-height:85px; border:1px solid #141a35;">
+
+ 
+
+                        <div class="d-flex align-items-center justify-content-center"
+
+                            style="width:65px; min-height:85px; color:#141a35; font-size:25px; font-weight:700; flex-shrink:0;">
+
+                            05
+
+                        </div>
+
+ 
+
+                        <div class="p-2">
+
+                            <h5 style="color:#202b68; font-weight:700; font-size:16px; margin-bottom:5px;">
+
+                                Capstone Project
+
+                            </h5>
+
+                            <p class="mb-0" style="color:#141a35; font-size:12px; line-height:1.5;">
+
+                                Apply everything: design an event poster and a social media post
+
+                            </p>
+
+                        </div>
+
+ 
+
+                    </div>
+
+ 
+
+                </div>
+
+ 
+
+            </div>
+
+        </div>
+
+ 
+
+        <!-- Footer -->
+
+        <p style="color:#758098; font-size:11px; line-height:1.5; margin-top:12px; margin-bottom:3px;">
+
+            PHOTOSHOP TRAINING · WEEK 1 · DESIGN FUNDAMENTALS
+
+        </p>
+
+ 
+
+        <p style="color:#758098; font-size:11px; text-align:end; margin:0;">
+
+            02
+
+        </p>
+
+ 
+
+    </div>
+
+</div>
+
+ 
+
+ 
+
+<!-- slide 3-->
+
+ <div class="carousel-item">
+
+ 
+
+                        <div class="d-flex flex-column justify-content-center bg-subtle-warning p-9 bg-2 rounded-5"
+
+                            style="height:600px; min-height:600px; padding:40px 35px; background-color:white;">
+
+ 
+
+                            <!-- Heading -->
+
+                            <div class="overview mb-3">
+
+ 
+
+            <span class="section"
+
+                style="color:#ff5b61; font-size:18px; font-weight:700; border-left:6px solid #ff5b61; padding-left:12px; margin-top: 20px;">
+
+                MODULE 1 · INTRODUCTION TO GRAPHIC DESIGN
+
+            </span>
+
+ 
+
+            <h2 style="color:#202b68; font-family:Poppins,serif; font-size:36px; font-weight:bold; margin-top:10px;">
+
+What Is Graphic Design?
+
+            </h2>
+
+           
+
+ 
+
+            <p style="color: #141a35;" class="mt-4">The craft of communicating ideas visually — combining images, typography, color, and layout to inform, persuade, or engage an audience.</p>
+
+ 
+
+            <h5 style="color: #ff5b61; font-weight: bold; ">RASTER  vs.  VECTOR</h5>
+
+        </div>
+
+ 
+
+                            <!-- Description -->
+
+                            <div class="row cap-4">
+
+                                <div class="col-6">
+
+                                    <div style="height:100%; min-height:270px; background:#eef3fc;
+
+                            border-radius:15px; padding:25px;
+
+                            border-top:5px solid #202b68;">
+
+ 
+
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+
+                                            <span style="font-size:13px; font-weight:700;
+
+                                     color:#758098; letter-spacing:1px;">
+
+                                                PHASE 01
+
+                                            </span>
+
+ 
+
+                                            <span style="width:42px; height:42px; border-radius:50%;
+
+                                     background:#202b68; color:white;
+
+                                     display:flex; align-items:center;
+
+                                     justify-content:center; font-weight:700;">
+
+                                                01
+
+                                            </span>
+
+                                        </div>
+
+ 
+
+                                        <h5 style="color:#202b68; font-weight:700; margin-bottom:15px;">
+
+RASTER
+
+                                        </h5>
+
+ 
+
+                                        <p style="font-size:14px; color:#758098; margin-bottom:15px;">
+
+Learn how raster images are created using pixels and understand their characteristics, quality, and resolution.                                        </p>
+
+ 
+
+                                        <ul style="color:#202b68; font-size:14px;
+
+                               line-height:1.8; padding-left:20px;">
+
+                                            <li>Made of pixels; resolution-dependent
+
+</li>
+
+                                            <li>Best for photographs & rich textures
+
+</li>
+
+                                            <li>Loses quality when scaled up
+
+</li>
+
+<li>
+
+    File types: PSD, JPG, PNG, TIFF
+
+</li>
+
+                                        </ul>
+
+ 
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-6">
+
+                                    <div style="height:100%; min-height:270px; background:#f7edef;
+
+                            border-radius:15px; padding:25px;
+
+                            border-top:5px solid #ff5b61;">
+
+ 
+
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+
+                                            <span style="font-size:13px; font-weight:700;
+
+                                     color:#ff5b61; letter-spacing:1px;">
+
+                                                PHASE 02
+
+                                            </span>
+
+ 
+
+                                            <span style="width:42px; height:42px; border-radius:50%;
+
+                                     background:#ff5b61; color:white;
+
+                                     display:flex; align-items:center;
+
+                                     justify-content:center; font-weight:700;">
+
+                                                02
+
+                                            </span>
+
+                                        </div>
+
+ 
+
+                                        <h5 style="color:#202b68; font-weight:700; margin-bottom:15px;">
+
+VECTOR
+
+ 
+
+                                        </h5>
+
+ 
+
+                                        <p style="font-size:14px; color:#758098; margin-bottom:15px;">
+
+                                            Understand the website structure, define section goals, and identify the
+
+                                            required content and assets.
+
+                                        </p>
+
+ 
+
+                                        <ul style="color:#202b68; font-size:14px;
+
+                               line-height:1.8; padding-left:20px;">
+
+                                            <li>Made of math paths; resolution-independent</li>
+
+                                            <li>Best for logos, icons & illustrations
+
+ 
+
+                                            </li>
+
+                                            <li>Best for logos, icons & illustrations
+
+ 
+
+                                            </li>
+
+                                            <li>
+
+                                                File types: AI, EPS, SVG, PDF
+
+                                            </li>
+
+                                        </ul>
+
+ 
+
+                                    </div>
+
+ 
+
+ 
+
+                                </div>
+
+ 
+
+                            </div>
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+                            <div class="text-end container-fluid px-0 mt-3">
+
+                                <span style="color:#758098; font-size:13px;  margin-top:3px">03</span>
+
+                            </div>
+
+                        </div>
+
+ 
+
+                    </div>
+
+ 
+
+<!--slide 4-->
+
+ 
+
+<div class="carousel-item">
+
+ 
+
+    <div class="d-flex flex-column justify-content-center bg-subtle-warning p-9 bg-2 rounded-5"
+
+                            style="height:600px; min-height:600px; padding:40px 35px; background-color:white;">
+
+ 
+
+        <!-- Header -->
+
+<div class="mb-1">
+
+<span class="section"
+
+                style="color:#ff5b61; font-size:18px; font-weight:700; border-left:6px solid #ff5b61; padding-left:12px; margin-top: 20px;">
+
+                MODULE 1 · INTRODUCTION TO GRAPHIC DESIGN
+
+            </span>
+
+ 
+
+            <h2 style="color:#303f80; font-family:Poppins,sans-serif; font-size:34px; font-weight:700; margin:8px 0 0;">
+
+ 
+
+                Color Modes  Resolution
+
+</h2>
+
+</div>
+
+ 
+
+        <!-- Color Modes -->
+
+<div class="mb-4">
+
+ 
+
+            <h6 style="color:#303f80; font-size:13px; font-weight:700; margin-bottom:14px;">
+
+ 
+
+                01. COLOR MODES
+
+</h6>
+
+ 
+
+            <div class="row g-3">
+
+ 
+
+                <!-- RGB -->
+
+<div class="col-6">
+
+<div class="d-flex align-items-center gap-4"
+
+ 
+
+                        style="height:165px; padding:22px 25px; background:#f6f7fb; border-radius:12px;">
+
+ 
+
+                        <div style="flex-shrink:0;">
+
+<h4 style="color:#303f80; font-size:25px; font-weight:700; margin-bottom:12px;">
+
+ 
+
+                                RGB
+
+</h4>
+
+ 
+
+                            <div style="position:relative; width:100px; height:90px;">
+
+ 
+
+                                <span style="position:absolute; width:54px; height:54px; border-radius:50%; background:#ef4444; left:0; top:0;"></span>
+
+ 
+
+                                <span style="position:absolute; width:54px; height:54px; border-radius:50%; background:#28a745; left:38px; top:0;"></span>
+
+ 
+
+                                <span style="position:absolute; width:54px; height:54px; border-radius:50%; background:#3273e8; left:19px; top:30px;"></span>
+
+ 
+
+                            </div>
+
+</div>
+
+ 
+
+                        <div>
+
+<p style="color:#303f80;font-size:14px;font-weight:600;margin-bottom:7px;">
+
+ 
+
+                                Additive Color
+
+</p>
+
+<p style="color:#667085;font-size:12px;line-height:1.7;margin:0;">
+
+ 
+
+                                Red, Green, Blue<br>
+
+ 
+
+                                Used for screens and digital designs.
+
+</p>
+
+</div>
+
+ 
+
+                    </div>
+
+</div>
+
+ 
+
+                <!-- CMYK -->
+
+<div class="col-6">
+
+<div class="d-flex align-items-center gap-4"
+
+ 
+
+                        style="height:165px; padding:22px 25px; background:#303f80; border-radius:12px;">
+
+ 
+
+                        <div style="flex-shrink:0;">
+
+<h4 style="color:#fff;font-size:25px;font-weight:700;margin-bottom:12px;">
+
+ 
+
+                                CMYK
+
+</h4>
+
+ 
+
+                          <div style="position:relative; width:100px; height:90px;">
+
+ 
+
+                                <span style="position:absolute; width:54px; height:54px; border-radius:50%; background:#ef4444; left:0; top:0;"></span>
+
+ 
+
+                                <span style="position:absolute; width:54px; height:54px; border-radius:50%; background:#28a745; left:38px; top:0;"></span>
+
+ 
+
+                                <span style="position:absolute; width:54px; height:54px; border-radius:50%; background:#3273e8; left:19px; top:30px;"></span>
+
+ 
+
+                            </div>
+
+</div>
+
+ 
+
+                        <div>
+
+<p style="color:#fff;font-size:14px;font-weight:600;margin-bottom:7px;">
+
+ 
+
+                                Subtractive Color
+
+</p>
+
+<p style="color:#e0e4f3;font-size:12px;line-height:1.7;margin:0;">
+
+ 
+
+                                Cyan, Magenta, Yellow, Black<br>
+
+ 
+
+                                Used for printed materials.
+
+</p>
+
+</div>
+
+ 
+
+                    </div>
+
+</div>
+
+ 
+
+            </div>
+
+</div>
+
+ 
+
+        <!-- Resolution -->
+
+<div class="mb-3">
+
+ 
+
+            <h6 style="color:#303f80;font-size:13px;font-weight:700;margin-bottom:14px;">
+
+ 
+
+                02. IMAGE RESOLUTION
+
+</h6>
+
+ 
+
+            <div class="row g-3">
+
+ 
+
+                <!-- 72 DPI -->
+
+<div class="col-4">
+
+<div class="text-center"
+
+ 
+
+                        style="padding:22px 12px;height:175px;background:#f6f7fb;border-radius:12px;">
+
+ 
+
+                        <h2 style="color:#303f80;font-size:48px;font-weight:700;margin:0;">
+
+ 
+
+                            72
+
+</h2>
+
+ 
+
+                        <span style="color:#ff5b61;font-size:11px;font-weight:700;letter-spacing:1px;">
+
+ 
+
+                            DPI
+
+</span>
+
+ 
+
+                        <div style="width:30px;height:3px;background:#ff5b61;margin:13px auto;"></div>
+
+ 
+
+                        <p style="color:#667085;font-size:12px;margin:0;">
+
+ 
+
+                            Web &amp; Screen Use
+
+</p>
+
+</div>
+
+</div>
+
+ 
+
+                <!-- 150 DPI -->
+
+<div class="col-4">
+
+<div class="text-center"
+
+ 
+
+                        style="padding:22px 12px;height:175px;background:#f6f7fb;border-radius:12px;">
+
+ 
+
+                        <h2 style="color:#303f80;font-size:48px;font-weight:700;margin:0;">
+
+ 
+
+                            150
+
+</h2>
+
+ 
+
+                        <span style="color:#ff5b61;font-size:11px;font-weight:700;letter-spacing:1px;">
+
+ 
+
+                            DPI
+
+</span>
+
+ 
+
+                        <div style="width:30px;height:3px;background:#ff5b61;margin:13px auto;"></div>
+
+ 
+
+                        <p style="color:#667085;font-size:12px;margin:0;">
+
+ 
+
+                            Draft  In-house Prints
+
+</p>
+
+</div>
+
+</div>
+
+ 
+
+                <!-- 300 DPI -->
+
+<div class="col-4">
+
+<div class="text-center"
+
+ 
+
+                        style="padding:22px 12px;height:175px;background:#f6f7fb;border-radius:12px;">
+
+ 
+
+                        <h2 style="color:#303f80;font-size:48px;font-weight:700;margin:0;">
+
+ 
+
+                            300
+
+</h2>
+
+ 
+
+                        <span style="color:#ff5b61;font-size:11px;font-weight:700;letter-spacing:1px;">
+
+ 
+
+                            DPI
+
+</span>
+
+ 
+
+                        <div style="width:30px;height:3px;background:#ff5b61;margin:13px auto;"></div>
+
+ 
+
+                        <p style="color:#667085;font-size:12px;margin:0;">
+
+ 
+
+                            High-quality Print
+
+</p>
+
+</div>
+
+</div>
+
+ 
+
+            </div>
+
+</div>
+
+ 
+
+        <!-- Footer -->
+
+<div class="d-flex justify-content-between align-items-center mt-auto">
+
+ 
+
+            <span style="color:#9299aa;font-size:10px;letter-spacing:.5px;">
+
+ 
+
+                PHOTOSHOP TRAINING · WEEK 1
+
+</span>
+
+ 
+
+            <span style="color:#303f80;font-size:12px;font-weight:600;">
+
+ 
+
+                04
+
+</span>
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+</div>
+
+ 
+
+<!--slide 5-->
+
+<div class="carousel-item">
+
+ 
+
+    <div class="d-flex flex-column justify-content-center bg-subtle-warning p-9 bg-2 rounded-5"
+
+                            style="height:600px; min-height:600px; padding:40px 35px; background-color:white;">
+
+ 
+
+        <!-- Header -->
+
+<div class="mb-1">
+
+<span class="section"
+
+                style="color:#ff5b61; font-size:18px; font-weight:700; border-left:6px solid #ff5b61; padding-left:12px; margin-top: 20px;">
+
+                MODULE 1 · INTRODUCTION TO GRAPHIC DESIGN
+
+            </span>
+
+            <h2 style="color:#303f80; font-family:Poppins,sans-serif; font-size:34px; font-weight:700; margin:8px 0 0;">
+
+ 
+
+File Formats
+
+</h2>
+
+</div>
+
+ 
+
+        <!-- Color Modes -->
+
+<div class="mb-4">
+
+ 
+
+            <h6 style="color:#303f80; font-size:13px; font-weight:700; margin-bottom:14px;">
+
+ 
+
+Know which format to use — and when.
+
+</h6>
+
+<div class="row g-4 flex-grow-1">
+
+ 
+
+            <!-- PSD -->
+
+            <div class="col-4">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+ 
+
+             <div class="col-4">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+ 
+
+             <div class="col-4">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+ 
+
+             <div class="col-4">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+ 
+
+             <div class="col-4">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+ 
+
+             <div class="col-4">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+            </div>
+
+ 
+
+</div>
+
+ 
+
+ 
+
+        <!-- Footer -->
+
+<div class="d-flex justify-content-between align-items-center mt-auto">
+
+ 
+
+            <span style="color:#9299aa;font-size:10px;letter-spacing:.5px;">
+
+ 
+
+                PHOTOSHOP TRAINING · WEEK 1
+
+</span>
+
+ 
+
+            <span style="color:#303f80;font-size:12px;font-weight:600;">
+
+ 
+
+                04
+
+</span>
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+</div>
+
+ 
+
+<!--slide 6-->
+
+<div class="carousel-item">
+
+                        <div class="d-flex flex-column justify-content-center bg-subtle-warning p-9 bg-2 rounded-5 "
+
+                            style="height:600px; min-height:600px; padding: 60px 65px; background-color: #202b68;">
+
+ 
+
+                            <div class="overview mb-3 ">
+
+                                <span class="label" style="color: #e69a00; font-size: 15px; font-weight: 700;">
+
+                                    PROCESS SUMMARY
+
+                                </span>
+
+ 
+
+                                <h2
+
+                                    style="color: #ffffff; font-family: Poppins , serif; font-size: 32px; font-weight: bold; margin-top: 8px;">
+
+Expo to Development, End to End
+
+                                </h2>
+
+                            </div>
+
+ 
+
+                             
+
+                            <div class="  mt-4" style="width: 70%; ">
+
+                                        <div class="d-flex align-items-center mb-3 p-2 rounded-3 process"
+
+                                            style="background:#eef3fc; min-height:60px; ">
+
+                                            <div
+
+                                                style="width:38px;height:38px;background:#202b68;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">
+
+                                                01
+
+                                            </div>
+
+                                            <strong class="ms-3" style="color:#202b68; font-size: 19px;">  Alignment
+
+</strong>
+
+                                            <small class="ms-auto " style="color: #758098;">Elements line up to create order and a clean visual connection.
+
+</small>
+
+ 
+
+                                        </div>
+
+                                        <div class="d-flex align-items-center mb-3 p-2 rounded-3 process"
+
+                                            style="background:#eef3fc; min-height:60px; ">
+
+                                            <div
+
+                                                style="width:38px;height:38px;background:#202b68;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">
+
+                                                02
+
+                                            </div>
+
+                                            <strong class="ms-3" style="color:#202b68; font-size: 19px;">Balance
+
+</strong>
+
+<small class="ms-auto " style="color: #758098;">Visual weight is distributed evenly — symmetrical or asymmetrical.
+
+ 
+
+</small>
+
+                                        </div>
+
+                                     
+
+ 
+
+                                        <div class="d-flex align-items-center mb-3 p-2 rounded-3 process"
+
+                                            style="background:#eef3fc; min-height:60px;">
+
+                                            <div
+
+                                                style="width:38px;height:38px;background:#202b68;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">
+
+                                                03
+
+                                            </div>
+
+                                            <strong class="ms-3" style="color:#202b68; font-size: 19px;">Contrast
+
+</strong>
+
+<small class="ms-auto " style="color: #758098;">Differences in color, size, or shape make key elements stand out.
+
+ 
+
+</small>
+
+                                         
+
+                                        </div>
+
+                                        <div class="d-flex align-items-center mb-3 p-2 rounded-3 process"
+
+                                            style="background:#eef3fc; min-height:60px;">
+
+                                            <div
+
+                                                style="width:38px;height:38px;background:#202b68;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">
+
+                                                04
+
+                                            </div>
+
+                                            <strong class="ms-3" style="color:#202b68; font-size: 19px;">Hierarchy
+
+</strong>
+
+<small class="ms-auto " style="color: #758098;">Guides the eye to what matters most, first.
+
+ 
+
+ 
+
+</small>
+
+                                         
+
+                                        </div>
+
+                                        <div class="d-flex align-items-center mb-3 p-2 rounded-3 process"
+
+                                            style="background:#eef3fc; min-height:60px;">
+
+                                            <div
+
+                                                style="width:38px;height:38px;background:#202b68;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">
+
+                                                04
+
+                                            </div>
+
+                                            <strong class="ms-3" style="color:#202b68; font-size: 19px;">Proximity
+
+</strong>
+
+<small class="ms-auto " style="color: #758098;">Related items are grouped together to show relationship.
+
+ 
+
+ 
+
+</small>
+
+                                         
+
+                                        </div>
+
+                                    </div>
+
+ 
+
+ 
+
+                                   
+
+                                   
+
+                                           
+
+ 
+
+                                    <div class="text-end mt-3">
+
+                                        <span style="color: #758098; font-size: 13px;">11</span>
+
+                                    </div>
+
+                                </div>
+
+ 
+
+                            </div>
+
+ 
+
+              
+
+<!--slide 7-->
+
+ <div class="carousel-item">
+    <div class="d-flex flex-column justify-content-center bg-subtle-warning p-9 bg-2 rounded-5"
+
+                            style="height:600px; min-height:600px; padding:40px 35px; background-color:white;">
+
+ 
+
+        <!-- Header -->
+
+<div class="mb-1">
+
+<span class="section"
+
+                style="color:#ff5b61; font-size:18px; font-weight:700; border-left:6px solid #ff5b61; padding-left:12px; margin-top: 20px;">
+
+                MODULE 1 · INTRODUCTION TO GRAPHIC DESIGN
+
+            </span>
+
+            <h2 style="color:#303f80; font-family:Poppins,sans-serif; font-size:34px; font-weight:700; margin:8px 0 0;">
+
+ 
+
+File Formats
+
+</h2>
+
+</div>
+
+ 
+
+        <!-- Color Modes -->
+
+<div class="mb-4">
+
+ 
+
+            <h6 style="color:#303f80; font-size:13px; font-weight:700; margin-bottom:14px;">
+
+ 
+
+Know which format to use — and when.
+
+</h6>
+
+<div class="row g-4 flex-grow-1">
+
+ 
+
+            <!-- PSD -->
+
+            <div class="col-6">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+ 
+
+             <div class="col-6">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+ 
+
+             <div class="col-6">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+ 
+
+             <div class="col-6">
+
+                <div class="h-100"
+
+                    style="background:#222e5d; padding:24px; min-height:0;">
+
+ 
+
+                    <span style="display:flex; align-items:center; justify-content:center; width:108px; height:49px; background:#ff5b61; color:#202b68; font-family:Georgia,serif; font-size:17px; font-weight:bold;">
+
+                        PSD
+
+                    </span>
+
+ 
+
+                    <p style="color:#ffffff; font-size:13px; line-height:1.5; margin-top:50px; margin-bottom:0;">
+
+                        Native Photoshop file. Editable layers, masks &amp; effects.
+
+                    </p>
+
+ 
+
+                </div>
+
+            </div>
+
+ 
+
+
+            </div>
+
+ 
+
+</div>
+
+ 
+
+ 
+
+        <!-- Footer -->
+
+<div class="d-flex justify-content-between align-items-center mt-auto">
+
+ 
+
+            <span style="color:#9299aa;font-size:10px;letter-spacing:.5px;">
+
+ 
+
+                PHOTOSHOP TRAINING · WEEK 1
+
+</span>
+
+ 
+
+            <span style="color:#303f80;font-size:12px;font-weight:600;">
+
+ 
+
+                04
+
+</span>
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+</div>
+
+ 
+<!--slide 8-->
+ <div class="carousel-item">
+    <div class="d-flex flex-column justify-content-center bg-subtle-warning p-9 bg-2 rounded-5"
+
+                            style="height:600px; min-height:600px; padding:40px 35px; background-color:white;">
+
+ 
+
+        <!-- Header -->
+
+<div class="mb-1">
+
+<span class="section"
+
+                style="color:#ff5b61; font-size:18px; font-weight:700; border-left:6px solid #ff5b61; padding-left:12px; margin-top: 20px;">
+
+MODULE 3 · COLOR THEORY
+
+            </span>
+
+            <h2 style="color:#303f80; font-family:Poppins,sans-serif; font-size:34px; font-weight:700; margin:8px 0 0;">
+
+ 
+
+The Color Wheel & Harmonies
+
+</h2>
+
+</div>
+
+ 
+
+        <!-- Color Modes -->
+
+<div class="mb-4">
+
+ 
+
+
+<div class="row g-4 flex-grow-1">
+
+ 
+
+            <!-- left -->
+
+            <div class="col-5 d-flex justify-content-center align-items-center">
+
+              <img src="./Color Wheel Infographic with Color Theory Labels.png" alt="no image " style="width: 400px; height: 400px;
+              object-fit: contain; ">
+ 
+
+
+            </div>
+
+<!--right-->
+            <div class="col-7">
+<div class="  mt-4" style="width: 90%;" >
+
+                                        <div class="d-flex align-items-center mb-3 p-2 rounded-3 process"
+
+                                            style="background:#eef3fc; min-height:80px; ">
+
+                                            <div
+
+                                                style="width:38px;height:38px;background:#202b68;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">
+
+                                                01
+
+                                            </div>
+
+                                            <strong class="ms-3" style="color:#202b68; font-size: 19px;">  Alignment
+
+</strong>
+
+                                            <small class="ms-auto " style="color: #758098;">Elements line up to create order and a clean visual connection.
+
+</small>
+
+ 
+
+                                        </div>
+
+                                        <div class="d-flex align-items-center mb-3 p-2 rounded-3 process"
+
+                                            style="background:#eef3fc; min-height:80px; ">
+
+                                            <div
+
+                                                style="width:38px;height:38px;background:#202b68;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">
+
+                                                02
+
+                                            </div>
+
+                                            <strong class="ms-3" style="color:#202b68; font-size: 19px;">Balance
+
+</strong>
+
+<small class="ms-auto " style="color: #758098;">Visual weight is distributed evenly — symmetrical or asymmetrical.
+
+ 
+
+</small>
+
+                                        </div>
+
+                                     
+
+ 
+
+                                        <div class="d-flex align-items-center mb-3 p-2 rounded-3 process"
+
+                                            style="background:#eef3fc; min-height:80px;">
+
+                                            <div
+
+                                                style="width:38px;height:38px;background:#202b68;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;">
+
+                                                03
+
+                                            </div>
+
+                                            <strong class="ms-3" style="color:#202b68; font-size: 19px;">Contrast
+
+</strong>
+
+<small class="ms-auto " style="color: #758098;">Differences in color, size, or shape make key elements stand out.
+
+ 
+
+</small>
+
+                                         
+
+                                        </div>
+
+                                      
+
+                                    </div>
+                </div>
+
+
+            </div>
+
+ 
+
+</div>
+
+ 
+
+ 
+
+        <!-- Footer -->
+
+<div class="d-flex justify-content-between align-items-center mt-auto">
+
+ 
+
+            <span style="color:#9299aa;font-size:10px;letter-spacing:.5px;">
+
+ 
+
+                PHOTOSHOP TRAINING · WEEK 1
+
+</span>
+
+ 
+
+            <span style="color:#303f80;font-size:12px;font-weight:600;">
+
+ 
+
+                04
+
+</span>
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+</div>
+
+
+<!--slide 9-->
+<div class="carousel-item">
+
+ 
+
+    <div class="d-flex flex-column justify-content-center bg-subtle-warning p-9 bg-2 rounded-5"
+
+                            style="height:600px; min-height:600px; padding:40px 35px; background-color:white;">
+
+ 
+
+        <!-- Header -->
+
+<div class="mb-1">
+
+<span class="section"
+
+                style="color:#ff5b61; font-size:18px; font-weight:700; border-left:6px solid #ff5b61; padding-left:12px; margin-top: 20px;">
+
+                MODULE 1 · INTRODUCTION TO GRAPHIC DESIGN
+
+            </span>
+
+            <h2 style="color:#303f80; font-family:Poppins,sans-serif; font-size:34px; font-weight:700; margin:8px 0 0;">
+
+ 
+
+File Formats
+
+</h2>
+
+</div>
+
+ 
+
+        <!-- Color Modes -->
+
+<div class="mb-4">
+
+ 
+
+            <h6 style="color:#303f80; font-size:13px; font-weight:700; margin-bottom:14px;">
+
+ 
+
+Know which format to use — and when.
+
+</h6>
+
+<div class="row g-4 flex-grow-1">
+
+ 
+
+            <!-- PSD -->
+
+           <div class="col-4">
+                <div class="h-100 d-flex flex-column justify-content-center"
+                     style="background:#222e5d; padding:18px;">
+
+                    <div class="d-flex align-items-center  justify-content-between ">
+
+                        <div style="
+                            width:55px;
+                            height:55px;
+                            min-width:55px;
+                            background:#ff5b61;
+                            color:#222e5d;
+                            border-radius:50%;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:18px;
+                            font-weight:700;">
+
+                            01
+
+                        </div>
+
+                        <h6 style="
+                            color:white;
+                            font-size:16px;
+                            font-weight:700;
+                            margin:0;  text-align:right; ">
+
+                            PSD
+
+                        </h6>
+
+                    </div>
+
+                    <p style="
+                        color:#ffffff;
+                        font-size:11px;
+                        line-height:1.6;
+                        margin:22px 0 0;">
+
+                        Editable Photoshop file with layers, masks and effects.
+
+                    </p>
+
+                </div>
+            </div>
+
+
+              <div class="col-4">
+                <div class="h-100 d-flex flex-column justify-content-center"
+                     style="background:#222e5d; padding:18px;">
+
+                    <div class="d-flex align-items-center  justify-content-between ">
+
+                        <div style="
+                            width:55px;
+                            height:55px;
+                            min-width:55px;
+                            background:#ff5b61;
+                            color:#222e5d;
+                            border-radius:50%;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:18px;
+                            font-weight:700;">
+
+                            01
+
+                        </div>
+
+                        <h6 style="
+                            color:white;
+                            font-size:16px;
+                            font-weight:700;
+                            margin:0;  text-align:right; ">
+
+                            PSD
+
+                        </h6>
+
+                    </div>
+
+                    <p style="
+                        color:#ffffff;
+                        font-size:11px;
+                        line-height:1.6;
+                        margin:22px 0 0;">
+
+                        Editable Photoshop file with layers, masks and effects.
+
+                    </p>
+
+                </div>
+            </div>
+ 
+
+              <div class="col-4">
+                <div class="h-100 d-flex flex-column justify-content-center"
+                     style="background:#222e5d; padding:18px;">
+
+                    <div class="d-flex align-items-center  justify-content-between ">
+
+                        <div style="
+                            width:55px;
+                            height:55px;
+                            min-width:55px;
+                            background:#ff5b61;
+                            color:#222e5d;
+                            border-radius:50%;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:18px;
+                            font-weight:700;">
+
+                            01
+
+                        </div>
+
+                        <h6 style="
+                            color:white;
+                            font-size:16px;
+                            font-weight:700;
+                            margin:0;  text-align:right; ">
+
+                            PSD
+
+                        </h6>
+
+                    </div>
+
+                    <p style="
+                        color:#ffffff;
+                        font-size:11px;
+                        line-height:1.6;
+                        margin:22px 0 0;">
+
+                        Editable Photoshop file with layers, masks and effects.
+
+                    </p>
+
+                </div>
+            </div>
+ 
+
+               <div class="col-4">
+                <div class="h-100 d-flex flex-column justify-content-center"
+                     style="background:#222e5d; padding:18px;">
+
+                    <div class="d-flex align-items-center  justify-content-between ">
+
+                        <div style="
+                            width:55px;
+                            height:55px;
+                            min-width:55px;
+                            background:#ff5b61;
+                            color:#222e5d;
+                            border-radius:50%;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:18px;
+                            font-weight:700;">
+
+                            01
+
+                        </div>
+
+                        <h6 style="
+                            color:white;
+                            font-size:16px;
+                            font-weight:700;
+                            margin:0;  text-align:right; ">
+
+                            PSD
+
+                        </h6>
+
+                    </div>
+
+                    <p style="
+                        color:#ffffff;
+                        font-size:11px;
+                        line-height:1.6;
+                        margin:22px 0 0;">
+
+                        Editable Photoshop file with layers, masks and effects.
+
+                    </p>
+
+                </div>
+            </div>
+ 
+
+                <div class="col-4">
+                <div class="h-100 d-flex flex-column justify-content-center"
+                     style="background:#222e5d; padding:18px;">
+
+                    <div class="d-flex align-items-center  justify-content-between ">
+
+                        <div style="
+                            width:55px;
+                            height:55px;
+                            min-width:55px;
+                            background:#ff5b61;
+                            color:#222e5d;
+                            border-radius:50%;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:18px;
+                            font-weight:700;">
+
+                            01
+
+                        </div>
+
+                        <h6 style="
+                            color:white;
+                            font-size:16px;
+                            font-weight:700;
+                            margin:0;  text-align:right; ">
+
+                            PSD
+
+                        </h6>
+
+                    </div>
+
+                    <p style="
+                        color:#ffffff;
+                        font-size:11px;
+                        line-height:1.6;
+                        margin:22px 0 0;">
+
+                        Editable Photoshop file with layers, masks and effects.
+
+                    </p>
+
+                </div>
+            </div>
+ 
+
+              <div class="col-4">
+                <div class="h-100 d-flex flex-column justify-content-center"
+                     style="background:#222e5d; padding:18px;">
+
+                    <div class="d-flex align-items-center  justify-content-between ">
+
+                        <div style="
+                            width:55px;
+                            height:55px;
+                            min-width:55px;
+                            background:#ff5b61;
+                            color:#222e5d;
+                            border-radius:50%;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:18px;
+                            font-weight:700;">
+
+                            01
+
+                        </div>
+
+                        <h6 style="
+                            color:white;
+                            font-size:16px;
+                            font-weight:700;
+                            margin:0;  text-align:right; ">
+
+                            PSD
+
+                        </h6>
+
+                    </div>
+
+                    <p style="
+                        color:#ffffff;
+                        font-size:11px;
+                        line-height:1.6;
+                        margin:22px 0 0;">
+
+                        Editable Photoshop file with layers, masks and effects.
+
+                    </p>
+
+                </div>
+            </div>
+
+            </div>
+
+ 
+
+</div>
+
+ 
+
+ 
+
+        <!-- Footer -->
+
+<div class="d-flex justify-content-between align-items-center mt-auto">
+
+ 
+
+            <span style="color:#9299aa;font-size:10px;letter-spacing:.5px;">
+
+ 
+
+                PHOTOSHOP TRAINING · WEEK 1
+
+</span>
+
+ 
+
+            <span style="color:#303f80;font-size:12px;font-weight:600;">
+
+ 
+
+                04
+
+</span>
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+</div>
+
+
+<!--slide 10-->
+<div class="carousel-item">
+
+ 
+
+    <div class="d-flex flex-column justify-content-center bg-subtle-warning p-9 bg-2 rounded-5"
+
+                            style="height:600px; min-height:600px; padding:40px 35px; background-color:white;">
+
+ 
+
+        <!-- Header -->
+
+<div class="mb-1">
+
+<span class="section"
+
+                style="color:#ff5b61; font-size:18px; font-weight:700; border-left:6px solid #ff5b61; padding-left:12px; margin-top: 20px;">
+
+                MODULE 4 · TYPOGRAPHY
+
+            </span>
+
+ 
+
+            <h2 style="color:#303f80; font-family:Poppins,sans-serif; font-size:34px; font-weight:700; margin:8px 0 0;">
+
+ 
+
+Typefaces & Pairing
+
+</h2>
+
+</div>
+
+ 
+
+        <!-- Color Modes -->
+
+<div class="mb-4">
+
+ 
+
+       
+
+ 
+
+            <div class="row g-3">
+
+ 
+
+                <!-- RGB -->
+
+<div class="col-6">
+
+<div class="d-flex align-items-center gap-4"
+
+ 
+
+                        style="height:165px; padding:22px 25px; background:#f6f7fb; border-radius:12px;">
+
+ 
+
+                        <div style="flex-shrink:0;">
+
+
+
+ 
+<div style="                        width:125px; min-width:125px;   color:#303f80;
+      font-family:serif; font-size:62px; font-weight:700; line-height:1;">
+
+                        Aa
+
+                    </div>
+
+</div>
+
+ 
+
+                        <div>
+
+<p style="color:#303f80;font-size:14px;font-weight:600;margin-bottom:7px;">
+
+ 
+
+                                Additive Color
+
+</p>
+
+<p style="color:#667085;font-size:12px;line-height:1.7;margin:0;">
+
+ 
+
+                                Red, Green, Blue<br>
+
+ 
+
+                                Used for screens and digital designs.
+
+</p>
+
+</div>
+
+ 
+
+                    </div>
+
+</div>
+
+
+
+
+ 
+
+                <!-- CMYK -->
+
+<div class="col-6">
+
+<div class="d-flex align-items-center gap-4"
+
+ 
+
+                        style="height:165px; padding:22px 25px; background:#303f80; border-radius:12px;">
+
+ 
+
+                        <div style="flex-shrink:0;">
+
+
+
+ 
+
+                          <div style="                        width:125px; min-width:125px;   color:#ffffff;
+      font-family:sans-serif; font-size:62px; font-weight:700; line-height:1;">
+
+                        Aa
+
+                    </div>
+
+</div>
+
+ 
+
+                        <div>
+
+<p style="color:#fff;font-size:14px;font-weight:600;margin-bottom:7px;">
+
+ 
+
+                                Subtractive Color
+
+</p>
+
+<p style="color:#e0e4f3;font-size:12px;line-height:1.7;margin:0;">
+
+ 
+
+                                Cyan, Magenta, Yellow, Black<br>
+
+ 
+
+                                Used for printed materials.
+
+</p>
+
+</div>
+
+ 
+
+                    </div>
+
+</div>
+
+ 
+
+            </div>
+
+</div>
+
+ 
+<div class="row g-5 mt-1">
+    <div class="col-6">
+<h6 style="color:#ff5b61; font-size:20px; margin-bottom:38px;  font-weight: bold;">
+            DISPLAY FONTS
+        </h6>
+         <p style="color:#17213d; font-size:16px; line-height:1.7;">
+Bold, decorative fonts used sparingly for headlines, posters & logos — designed
+<br>
+to grab attention, not for body text.
+        </p>
+
+</div>
+  <div class="col-6">
+<h6 style="color:#ff5b61; font-size:20px; margin-bottom:38px; font-weight: bold;">
+FONT PAIRING
+        </h6>
+     <ul style="font-size: 16px; color: #17213d;">
+        <li>Pair a serif header with a sans-serif body (or vice versa)
+</li>
+<li>Limit a design to 2–3 typefaces max
+</li>
+<li>Use weight & size to create contrast, not more fonts
+</li>
+     </ul>
+
+</div>
+
+ 
+
+
+</div>
+
+ 
+
+        <!-- Footer -->
+
+<div class="d-flex justify-content-between align-items-center mt-auto">
+
+ 
+
+            <span style="color:#9299aa;font-size:10px;letter-spacing:.5px;">
+
+ 
+
+                PHOTOSHOP TRAINING · WEEK 1
+
+</span>
+
+ 
+
+            <span style="color:#303f80;font-size:12px;font-weight:600;">
+
+ 
+
+                04
+
+</span>
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+</div>
+
+
+<!--slide 11-->
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+  </div>
+                </div>
+
+ 
+
+                <!-- buttons below the slide -->
+
+                <div class="d-flex justify-content-between align-items-center mt-3 px-2">
+
+                    <button class="slide-nav-btn" type="button" data-bs-target="#carouselExampleContent" data-bs-slide="prev">
+
+                        <i class="fa-solid fa-arrow-left"></i> Previous
+
+                    </button>
+
+                    <button class="slide-nav-btn" type="button" data-bs-target="#carouselExampleContent" data-bs-slide="next">
+
+                        Next <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+ 
+
+            </div>
+
+ 
+
+        </div>
+
+ 
+
+    </div>
+
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+ 
+
+</html>
